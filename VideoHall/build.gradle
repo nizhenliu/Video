@@ -1,0 +1,86 @@
+if (Boolean.valueOf(rootProject.ext.isCinemaModule)){
+    apply plugin: 'com.android.library'
+}else{
+    apply plugin: 'com.android.application'
+}
+apply plugin: 'org.jetbrains.kotlin.android'
+apply plugin: 'kotlin-kapt'
+/*序列化插件*/
+apply plugin: 'kotlin-parcelize'
+
+def versions = rootProject.ext.versions
+def libs = rootProject.ext.dependencies
+android {
+    compileSdkVersion versions.compileSdkVersion
+    buildToolsVersion versions.buildToolsVersion
+
+    defaultConfig {
+        if (!Boolean.valueOf(rootProject.ext.isCinemaModule)){
+            applicationId "com.example.videohall"
+        }
+        minSdkVersion versions.minSdkVersion
+        targetSdkVersion versions.targetSdkVersion
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        consumerProguardFiles "consumer-rules.pro"
+
+        kapt {arguments {arg("AROUTER_MODULE_NAME", project.getName())}}
+        multiDexEnabled true
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+    viewBinding{
+        enabled = true
+    }
+}
+
+dependencies {
+
+    implementation "androidx.core:core-ktx:$versions.androidXCore"
+    implementation 'androidx.appcompat:appcompat:1.3.0'
+    implementation 'com.google.android.material:material:1.4.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+
+//    //arouter
+//    implementation libs.arouterapi
+//    kapt libs.aroutercompile
+
+    implementation project(path: ':MVI')
+    implementation project(path: ':Home')
+    implementation project(path: ':Log')
+    implementation project(path: ':Room')
+    implementation project(path: ':Tool')
+    implementation project(path: ':Request')
+    implementation project(path: ':Widget')
+    //arouter
+    implementation libs.arouterapi
+    kapt libs.aroutercompiler
+
+    implementation libs.lifecycleext
+    implementation libs.smart
+    implementation libs.smartheader
+    implementation libs.smartfooter
+
+    implementation libs.danmu
+    implementation libs.danmuv7a
+    implementation libs.danmux86
+
+    kapt "androidx.room:room-compiler:$versions.room_version"
+}

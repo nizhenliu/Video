@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_margin="5dp"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:ignore="ResourceName">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_40"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.example.widget.ImageRound
+            android:id="@+id/iv_item_simple_info_header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentBottom="true"
+            android:layout_gravity="center"
+            android:src="@mipmap/ic_launcher">
+        </com.example.widget.ImageRound
+         >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_toRightOf="@+id/iv_item_simple_info_header"
+            android:gravity="center_vertical"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_item_simple_info_author"
+                style="@style/NormalTxtStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="作者"
+                android:textStyle="bold"></TextView>
+
+            <TextView
+                android:id="@+id/tv_item_simple_info_publishtime"
+                style="@style/SmallTxtStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1天前"></TextView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:gravity="center_vertical"
+            android:layout_alignParentEnd="true"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+            <TextView
+                android:gravity="center"
+                android:id="@+id/btn_item_simple_info_subscibe"
+                android:background="@drawable/home_subscibebtn_bg"
+                android:text="关注"
+                android:textAlignment="center"
+                style="@style/InverseTxtStyle"
+                android:layout_marginRight="20dp"
+                android:layout_width="80dp"
+                android:layout_height="25dp"
+                ></TextView>
+        </LinearLayout>
+    </RelativeLayout>
+
+    <androidx.cardview.widget.CardView
+        app:cardCornerRadius="7dp"
+        android:layout_width="match_parent"
+        android:layout_height="170dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/iv_item_simple_info_primaryimage"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@mipmap/ic_launcher"></ImageView>
+
+            <ImageView
+                android:id="@+id/iv_item_simple_info_play"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:src="@drawable/ic_play"></ImageView>
+
+            <TextView
+                android:background="@drawable/home_txt_bg"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentStart="true"
+                android:layout_margin="10dp"
+                android:text="23.3K"
+                android:padding="2dp"
+                style="@style/home_txt_tip_style"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"></TextView>
+
+            <TextView
+                android:background="@drawable/home_txt_bg"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentEnd="true"
+                android:layout_margin="10dp"
+                android:padding="2dp"
+                android:text="2分20秒"
+                style="@style/home_txt_tip_style"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"></TextView>
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_40">
+        <TextView
+            android:id="@+id/tv_item_simple_info_title"
+            android:text="Title"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"></TextView>
+    </LinearLayout>
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_40"
+        android:columnCount="3"
+        android:rowCount="1">
+
+        <LinearLayout
+            android:id="@+id/ll_item_simple_info_shared"
+            android:gravity="center"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_row="0"
+            android:layout_column="0"
+            android:layout_columnWeight="1"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_home_share"></ImageView>
+            <TextView
+                android:layout_marginLeft="3dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/home_simple_info_share"></TextView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_item_simple_info_commentnum"
+            android:gravity="center"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_row="0"
+            android:layout_column="1"
+            android:layout_columnWeight="1"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_sms"></ImageView>
+            <TextView
+                android:id="@+id/tv_item_simple_info_commentnum"
+                android:layout_marginLeft="3dp"
+                android:text="28"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"></TextView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_item_simple_info_agreenum"
+            android:gravity="center"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_row="0"
+            android:layout_column="2"
+            android:layout_columnWeight="1"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/iv_item_simple_info_agree"
+                android:layout_width="wrap_content"
+
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_thumb_up"></ImageView>
+            <TextView
+                android:id="@+id/tv_item_simple_info_agreenum"
+                android:layout_marginLeft="3dp"
+                android:text="30"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"></TextView>
+        </LinearLayout>
+
+
+    </GridLayout>
+</LinearLayout>

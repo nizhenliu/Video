@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">VideoHall</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="Cinema_fragment_mutiltypegetfailed">分类信息获取失败</string>
+    <string name="Cinema_fragment_getSubTypeFailed">获取子类型失败</string>
+    <string name="Cinema_fragment_getvideosfailed">获取视频列表信息失败</string>
+    <string name="Cinema_detail_senddanmu">发送弹幕</string>
+    <string name="Cinema_detail_description">简介</string>
+    <string name="Cinema_detail_comment">评论</string>
+    <string name="Cinema_detail_description_collect">收藏</string>
+    <string name="Cinema_detail_description_shared">分享</string>
+    <string name="Cinema_detail_description_zs">赞赏</string>
+    <string name="Cinema_detail_comment_content">评论内容</string>
+    <string name="Cinema_detail_comment_publish">发布</string>
+    <string name="Cinema_detail_comment_failed">评论获取失败</string>
+    <string name="Cinema_detail_comment_publishfailed">评论发布失败</string>
+</resources>

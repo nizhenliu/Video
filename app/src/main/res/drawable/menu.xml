@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    tools:ignore="ResourceName">
+    <item android:id="@+id/bar_home" android:orderInCategory="0" android:title="首页" android:icon="@drawable/ic_home"></item>
+    <item android:id="@+id/bar_cinema" android:orderInCategory="1" android:title="放映厅" android:icon="@drawable/ic_cinema"></item>
+    <item android:id="@+id/bar_send" android:orderInCategory="2" android:title="发视频" android:icon="@drawable/ic_send2"></item>
+    <item android:id="@+id/bar_msg" android:orderInCategory="3" android:title="直播" android:icon="@drawable/ic_live"></item>
+    <item android:id="@+id/bar_mine" android:orderInCategory="4" android:title="我的" android:icon="@drawable/ic_mine"></item>
+</menu>

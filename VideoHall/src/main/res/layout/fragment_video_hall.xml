@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.VideoHallFragment">
+    <LinearLayout
+        android:id="@+id/cinema_linearlayout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_40"
+        android:orientation="horizontal"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <EditText
+            android:id="@+id/et_cinema_search"
+            android:hint="蒋欣电视剧"
+            android:layout_margin="@dimen/dp_5"
+            android:background="@color/lightgrey"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="8"></EditText>
+
+        <TextView
+            android:id="@+id/tv_cinema_filter"
+            android:layout_margin="@dimen/dp_5"
+            android:layout_width="@dimen/dp_30"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/lightgrey"
+            android:drawableRight="@drawable/ic_filter"
+            android:gravity="center"
+            android:text="筛选"></TextView>
+
+    </LinearLayout>
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/cinema_tab_types"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:tabMode="scrollable"
+        app:layout_constraintTop_toBottomOf="@+id/cinema_linearlayout"></com.google.android.material.tabs.TabLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/cinema_rv_subtypes"
+        android:layout_width="match_parent"
+        app:layout_constraintTop_toBottomOf="@+id/cinema_tab_types"
+        android:layout_height="0dp"></androidx.recyclerview.widget.RecyclerView>
+
+    <com.scwang.smart.refresh.layout.SmartRefreshLayout
+        android:id="@+id/srl_cinema_simple"
+        app:layout_constraintTop_toBottomOf="@+id/cinema_rv_subtypes"
+        android:layout_width="match_parent"
+        android:layout_height="0dp">
+        <com.scwang.smart.refresh.header.ClassicsHeader
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"></com.scwang.smart.refresh.header.ClassicsHeader>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/cinema_rv_mutilvideo"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            ></androidx.recyclerview.widget.RecyclerView>
+        <com.scwang.smart.refresh.footer.ClassicsFooter
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"></com.scwang.smart.refresh.footer.ClassicsFooter>
+    </com.scwang.smart.refresh.layout.SmartRefreshLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

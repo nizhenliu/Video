@@ -1,0 +1,71 @@
+ext{
+    /**
+     * 组件化设置
+     */
+    isHomeModule=true
+    isCinemaModule=true
+    isPublishModule=true
+    isLiveModule=true
+    isMineModule=true
+
+
+    def lifecycle_version = "2.2.0-rc03"
+    def cf_version="1.1.15"
+    def design_version="1.3.0"
+    def nav_version = "2.2.1"
+    def arouter_version = "1.5.2"
+    def smart_version="2.0.3"
+
+    dependencies = [
+            coroutines:"org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.9",
+            viewmodel:"androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version",
+            lifecycle:"androidx.lifecycle:lifecycle-runtime-ktx:$lifecycle_version",
+            lifecycleext:"androidx.lifecycle:lifecycle-extensions:2.1.0",
+            retrofit:"com.squareup.retrofit2:retrofit:2.9.0",
+            gsonconverter:"com.squareup.retrofit2:converter-gson:2.9.0",
+            gson:"com.google.code.gson:gson:2.9.0",
+            okhttp_logging_interceptor:"com.squareup.okhttp3:logging-interceptor:4.9.0",
+            common:"com.github.hahajing0000.coreframwork:Common:$cf_version",
+            logger:"com.github.hahajing0000.coreframwork:Logger:$cf_version",
+            materialdesign: "com.google.android.material:material:$design_version",
+            recyclerview:"androidx.recyclerview:recyclerview:1.1.0",
+            // Java language implementation
+            javanavfragment: "androidx.navigation:navigation-fragment:$nav_version",
+            javanavui: "androidx.navigation:navigation-ui:$nav_version",
+            arouterapi:"com.alibaba:arouter-api:$arouter_version",
+            aroutercompiler:"com.alibaba:arouter-compiler:$arouter_version",
+            eventbus:"org.greenrobot:eventbus:3.1.1",
+            rxjava:"io.reactivex.rxjava2:rxjava:2.0.1",
+            rxandroid:"io.reactivex.rxjava2:rxandroid:2.0.1",
+            rxpermissions:"com.tbruyelle.rxpermissions2:rxpermissions:0.9.4@aar",
+            multidex:"com.android.support:multidex:1.0.3",
+            glide:"com.github.bumptech.glide:glide:4.8.0",
+            badgeview:"q.rorbin:badgeview:1.1.3",
+            smart:"com.scwang.smart:refresh-layout-kernel:$smart_version",
+            smartheader:"com.scwang.smart:refresh-header-classics:$smart_version",
+            smartfooter:"com.scwang.smart:refresh-footer-classics:$smart_version",
+            gsy:"com.shuyu:GSYVideoPlayer:7.1.4",
+            danmu:"com.github.ctiao:DanmakuFlameMaster:0.9.25",
+            danmuv7a:"com.github.ctiao:ndkbitmap-armv7a:0.9.21",
+            danmux86:"com.github.ctiao:ndkbitmap-x86:0.9.21",
+            websocket:"org.java-websocket:Java-WebSocket:1.5.1",
+            room:"androidx.room:room-runtime:2.4.3"
+    ]
+
+    versions = [
+            compileSdkVersion:32,
+            targetSdkVersion:32,
+            minSdkVersion:24,
+            androidXCore:"1.3.2",
+            buildToolsVersion:"30.0.3",
+            room_version:"2.4.3"
+    ]
+
+    urls = [
+            TEST:"http://82.156.173.100:8083/",
+            DEV:"http://82.156.173.100:8083/",
+            RELEASE:"http://82.156.173.100:8083/",
+            WS:"82.156.173.100:8083/api/websocket/100",
+            RTMP:"rtmp://82.156.173.100:1935/live/test"
+    ]
+}

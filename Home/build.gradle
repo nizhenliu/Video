@@ -1,0 +1,84 @@
+if (Boolean.valueOf(rootProject.ext.isHomeModule)) {
+    apply plugin: 'com.android.library'
+} else {
+    apply plugin: 'com.android.application'
+}
+apply plugin: 'org.jetbrains.kotlin.android'
+apply plugin: 'kotlin-kapt'
+
+def versions = rootProject.ext.versions
+def libs = rootProject.ext.dependencies
+android {
+    compileSdkVersion versions.compileSdkVersion
+    buildToolsVersion versions.buildToolsVersion
+
+    defaultConfig {
+        if (!Boolean.valueOf(rootProject.ext.isHomeModule)) {
+            applicationId "com.example.home"
+        }
+        minSdkVersion versions.minSdkVersion
+        targetSdkVersion versions.targetSdkVersion
+
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+        kapt {arguments {arg("AROUTER_MODULE_NAME", project.getName())}}
+
+        multiDexEnabled true
+
+        manifestPlaceholders = [qqappid: "100424468"]
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    viewBinding {
+        enabled = true
+    }
+}
+
+dependencies {
+
+    implementation 'com.blankj:utilcodex:1.30.6'
+    //沉浸式状态栏
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation "androidx.core:core-ktx:$versions.androidXCore"
+    implementation 'androidx.appcompat:appcompat:1.3.0'
+    implementation 'com.google.android.material:material:1.4.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    implementation 'com.google.firebase:firebase-firestore-ktx:23.0.2'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+//    implementation 'com.tencent.bugly:crashreport:latest.release'
+    implementation libs.lifecycleext
+
+    implementation project(path: ':Log')
+    implementation project(path: ':Request')
+    implementation project(path: ':MVI')
+    implementation project(path: ':Tool')
+    implementation project(path: ':Room')
+    implementation project(path: ':Widget')
+    implementation ('com.alibaba:arouter-api:1.5.2')
+    implementation 'androidx.annotation:annotation:1.2.0'
+    //ARouter依赖   //版本要改成最新版本
+    annotationProcessor 'com.alibaba:arouter-compiler:1.5.2' //ARouter依赖
+    kapt 'com.alibaba:arouter-compiler:1.5.2'
+//    //arouter
+//    implementation libs.arouterapi
+//    kapt libs.aroutercompiler
+
+    implementation libs.danmu
+    implementation libs.danmuv7a
+    implementation libs.danmux86
+}

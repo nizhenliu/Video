@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusableInTouchMode="true"
+    android:focusable="true"
+    android:orientation="vertical"
+    tools:context=".ui.HomeDetailActivity"
+    tools:ignore="ResourceName">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <RelativeLayout
+            android:id="@+id/rl_home_detail_video"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.example.widget.MyGSYVideoPlayer
+                android:id="@+id/gsy_home_detail"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_260">
+            </com.example.widget.MyGSYVideoPlayer>
+
+            <master.flame.danmaku.ui.widget.DanmakuView
+                android:id="@+id/dv_home_detail"
+                android:layout_width="match_parent"
+
+                android:layout_height="@dimen/dp_260"></master.flame.danmaku.ui.widget.DanmakuView>
+
+            <ImageView
+                android:id="@+id/iv_home_detail_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="@dimen/dp_15"
+                android:layout_marginTop="@dimen/dp_15"
+                android:layout_marginEnd="@dimen/dp_15"
+                android:layout_marginBottom="@dimen/dp_15"
+                android:src="@drawable/ic_home_back"></ImageView>
+
+            <ImageView
+                android:id="@+id/iv_home_detail_search"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignRight="@id/iv_home_detail_tv"
+
+                android:layout_marginTop="@dimen/dp_15"
+                android:layout_marginRight="40dp"
+                android:src="@drawable/ic_home_search"></ImageView>
+
+            <ImageView
+                android:id="@+id/iv_home_detail_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignRight="@id/iv_home_detail_more"
+                android:layout_marginTop="@dimen/dp_15"
+                android:layout_marginRight="40dp"
+                android:src="@drawable/ic_home_live_tv"></ImageView>
+
+            <ImageView
+                android:id="@+id/iv_home_detail_more"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_margin="@dimen/dp_15"
+                android:src="@drawable/ic_home_more"></ImageView>
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_home_detail_tabandbullet"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tab_home_detail_type"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="7"
+                app:tabIndicatorColor="@color/lightgrey"
+                app:tabIndicatorFullWidth="false"
+                app:tabIndicatorHeight="4dp"
+                app:tabSelectedTextColor="@color/crimson">
+            </com.google.android.material.tabs.TabLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="3"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv_home_detail_danmu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@drawable/home_detail_et_bg"
+                    android:hint="@string/home_detail_bulletscreen_txt"
+                    android:padding="3dp"
+                    android:textSize="@dimen/sp_14"></TextView>
+
+                <Switch
+                    android:id="@+id/switch_home_detail_bulletscreen"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:checked="true"
+                    android:showText="true"
+                    android:switchTextAppearance="@style/SwitchTextAppearance"
+                    android:textAlignment="textEnd"
+                    android:textOff="OFF"
+                    android:textOn="ON"></Switch>
+            </LinearLayout>
+        </LinearLayout>
+
+
+
+        <FrameLayout
+            android:id="@+id/fl_home_detail_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </FrameLayout>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

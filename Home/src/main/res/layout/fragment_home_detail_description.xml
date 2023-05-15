@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<!--    <androidx.core.widget.NestedScrollView-->
+<!--        android:id="@+id/nsv_home_detail"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent">-->
+<!--        <FrameLayout-->
+<!--            android:id="@+id/fl_home_detail_content"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent">-->
+
+<!--        </FrameLayout>-->
+<!--    </androidx.core.widget.NestedScrollView>-->
+<LinearLayout
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="100dp">
+
+        <LinearLayout
+            android:id="@+id/ll_home_detail_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/iv_home_detail_description_authorimg"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:scaleType="fitXY"
+                android:src="@mipmap/ic_launcher"></ImageView>
+
+            <TextView
+                android:id="@+id/tv_home_detail_description_author"
+                style="@style/LargeTxtStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                ></TextView>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_home_detail_description_title"
+            style="@style/NormalTxtStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            app:layout_constraintTop_toBottomOf="@+id/ll_home_detail_description"></TextView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <GridLayout
+        android:rowCount="1"
+        android:columnCount="4"
+        android:layout_marginBottom="@dimen/dp_10"
+        android:layout_width="match_parent"
+        android:layout_height="40dp">
+        <com.example.widget.DrawableCenterTextView android:drawableLeft="@drawable/ic_home_detail_description_agree"  style="@style/home_detail_txt_style" android:id="@+id/tv_home_detail_description_agree" android:layout_columnWeight="1"  android:text="1000"  android:layout_width="wrap_content" android:layout_height="match_parent" ></com.example.widget.DrawableCenterTextView>
+        <com.example.widget.DrawableCenterTextView android:drawableLeft="@drawable/ic_home_detail_description_collect" style="@style/home_detail_txt_style" android:id="@+id/tv_home_detail_description_collect" android:layout_columnWeight="1"  android:text="@string/home_detail_description_collect" android:layout_width="wrap_content" android:layout_height="match_parent" ></com.example.widget.DrawableCenterTextView>
+        <com.example.widget.DrawableCenterTextView android:drawableLeft="@drawable/ic_home_detail_description_shared" style="@style/home_detail_txt_style" android:id="@+id/tv_home_detail_description_shared" android:layout_columnWeight="1"  android:text="@string/home_detail_description_shared" android:layout_width="wrap_content" android:layout_height="match_parent" ></com.example.widget.DrawableCenterTextView>
+        <com.example.widget.DrawableCenterTextView android:drawableLeft="@drawable/ic_home_detail_description_admire" style="@style/home_detail_txt_style" android:id="@+id/tv_home_detail_description_admire" android:layout_columnWeight="1"  android:text="@string/home_detail_description_admire" android:layout_width="wrap_content" android:layout_height="match_parent" ></com.example.widget.DrawableCenterTextView>
+    </GridLayout>
+
+    <View
+        android:layout_margin="2dp"
+        android:background="@color/lightgrey"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"></View>
+
+    <FrameLayout
+        android:id="@+id/fl_home_detail_Recommend"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></FrameLayout>
+</LinearLayout>
+
+</androidx.core.widget.NestedScrollView>

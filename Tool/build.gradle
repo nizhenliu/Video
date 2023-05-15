@@ -1,0 +1,76 @@
+plugins {
+    id 'com.android.library'
+    id 'org.jetbrains.kotlin.android'
+}
+def lib = rootProject.ext.dependencies
+def versions = rootProject.ext.versions
+def urls = rootProject.ext.urls
+android {
+    compileSdkVersion versions.compileSdkVersion
+
+    defaultConfig {
+        minSdkVersion versions.minSdkVersion
+        targetSdkVersion versions.targetSdkVersion
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        debug{
+            buildConfigField "String", "WS_HOST", "\"" + urls.WS + "\""
+        }
+        release {
+            buildConfigField "String", "WS_HOST", "\"" + urls.WS + "\""
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+def dataStoreVersion = '1.0.0-beta01'
+dependencies {
+
+    implementation "androidx.core:core-ktx:$versions.androidXCore"
+    implementation 'androidx.appcompat:appcompat:1.3.0'
+    implementation 'com.google.android.material:material:1.4.0'
+
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+    implementation project(path: ':Log')
+    api lib.coroutines
+    api lib.viewmodel
+    api lib.lifecycle
+    //api lib.common
+    api lib.retrofit
+    api lib.materialdesign
+    api lib.recyclerview
+    api lib.rxjava
+    api lib.rxandroid
+    api lib.rxpermissions
+
+    api lib.gson
+
+    // 引入multidex库
+    api lib.multidex
+    api lib.glide
+    api lib.smart //核心必须依赖
+    api lib.smartheader//经典刷新头
+    api lib.smartfooter //经典加载
+    api lib.badgeview//气泡小红点
+    api lib.eventbus
+    api 'org.aspectj:aspectjrt:1.9.7'
+
+    // Kotlin
+    implementation "androidx.biometric:biometric-ktx:1.2.0-alpha03"
+    implementation "androidx.datastore:datastore-preferences:$dataStoreVersion"
+
+    api lib.websocket
+}

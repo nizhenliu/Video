@@ -1,0 +1,18 @@
+<resources>
+    <string name="home_app_name">Home</string>
+    <string name="home_simple_info_share">分享</string>
+    <string name="home_simple_videoinfo_getvideofailed">数据获取失败</string>
+    <string name="home_simple_videoinfo_publishtime">%1$s前</string>
+    <string name="home_detail_bulletscreen_txt">发送弹幕</string>
+    <string name="home_detail_descriptioin">简介</string>
+    <string name="home_detail_recomment">评论</string>
+    <string name="home_recommend_like">猜你喜欢</string>
+    <string name="home_detail_description_collect">收藏</string>
+    <string name="home_detail_description_shared">分享</string>
+    <string name="home_detail_description_admire">赞赏</string>
+    <string name="home_detail_comment_nocommentvalue">没有获取到评论信息</string>
+    <string name="home_detail_comment_content">评论内容</string>
+    <string name="home_detail_comment_publish">发布</string>
+    <string name="home_detail_comment_pleaseinputcontent">请输入评论内容</string>
+    <string name="home_detail_comment_publishfailed">评论发布失败</string>
+</resources>

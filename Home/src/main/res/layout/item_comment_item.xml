@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:ignore="ResourceName">
+
+
+    <LinearLayout
+        android:layout_marginTop="@dimen/dp_10"
+        android:id="@+id/ll_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/home_detail_comment_headerimage"
+            android:layout_width="@dimen/dp_25"
+            android:layout_height="@dimen/dp_25"
+            android:src="@mipmap/ic_launcher"></ImageView>
+
+        <TextView
+            android:layout_gravity="center_vertical"
+            android:id="@+id/home_detail_comment_username"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="用户名"></TextView>
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/home_detail_comment_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_20"
+        android:text="评论内容"
+        app:layout_constraintStart_toStartOf="@+id/ll_title"
+        app:layout_constraintTop_toBottomOf="@+id/ll_title"></TextView>
+
+    <ImageView
+        android:id="@+id/home_Detail_comment_agree"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_agree"
+        app:layout_constraintBottom_toBottomOf="@+id/home_detail_comment_agree_count"
+        app:layout_constraintEnd_toStartOf="@+id/home_detail_comment_agree_count"
+        app:layout_constraintTop_toTopOf="@+id/home_detail_comment_agree_count"></ImageView>
+
+    <TextView
+        android:id="@+id/home_detail_comment_agree_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/dp_15"
+        android:text="30"
+        app:layout_constraintBottom_toBottomOf="@+id/home_detail_comment_content"
+        app:layout_constraintEnd_toEndOf="parent"></TextView>
+
+    <TextView
+        android:id="@+id/home_detail_comment_publish"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_20"
+        android:textSize="@dimen/sp_10"
+        android:textColor="@color/lightgrey"
+        android:text="发布于1个月前"
+        app:layout_constraintStart_toStartOf="@+id/home_detail_comment_content"
+        app:layout_constraintTop_toBottomOf="@+id/home_detail_comment_content"></TextView>
+
+    <TextView
+        android:id="@+id/home_detail_comment_reply"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:textColor="@color/black"
+        android:text="回复"
+        app:layout_constraintBottom_toBottomOf="@+id/home_detail_comment_publish"
+        app:layout_constraintStart_toEndOf="@+id/home_detail_comment_publish"></TextView>
+
+    <TextView
+        android:id="@+id/home_detail_comment_expanedall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_10"
+        android:textColor="@color/black"
+        android:textSize="@dimen/sp_12"
+        android:text="- - 展开全部回复 - -"
+        app:layout_constraintStart_toStartOf="@+id/home_detail_comment_publish"
+        app:layout_constraintTop_toBottomOf="@+id/home_detail_comment_publish"></TextView>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="@+id/home_detail_comment_expanedall"
+        app:layout_constraintTop_toBottomOf="@+id/home_detail_comment_expanedall"></androidx.recyclerview.widget.RecyclerView>
+</androidx.constraintlayout.widget.ConstraintLayout>
